@@ -34,6 +34,12 @@ namespace CalculatorCSharp
             return calc.Total;
         }
 
+        int Multiply()
+        {
+            calc.Multiplicate();
+            return calc.Total;
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -111,6 +117,10 @@ namespace CalculatorCSharp
             else if (calc.Op == operation.divide)
             {
                 Divide();
+            }
+            else if(calc.Op == operation.multiplicate)
+            {
+                Multiply();
             }
             calc.Op = operation.equal;
             calc.Operand1 = calc.Total;
@@ -259,6 +269,21 @@ namespace CalculatorCSharp
         private void lblFocus_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if(calc.Op== operation.none)
+            {
+                calc.Operand1 = calc.Operand1 / 10;
+                lblFocus.Text= Convert.ToString(calc.Operand1);
+            }
+            else
+            {
+                calc.Operand2 = calc.Operand2 / 10;
+                lblFocus.Text = Convert.ToString(calc.Operand2);
+
+            }
         }
     }
 }

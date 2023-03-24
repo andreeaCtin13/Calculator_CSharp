@@ -14,6 +14,7 @@ namespace CalculatorCSharp
         private operation op;
         private int operand1;
         private int operand2;
+        public static int nrOperatii=0;
 
         public Calculator() {
             this.total = 0;
@@ -27,6 +28,12 @@ namespace CalculatorCSharp
             this.total = total;
             this.operand1 = 0;
             this.operand2 = 0;
+            Calculator.nrOperatii++;
+        }
+
+        public void ResetOperationsNo()
+        {
+            Calculator.nrOperatii = 0;
         }
 
         public int Operand1
@@ -43,21 +50,25 @@ namespace CalculatorCSharp
 
         public void Add()
         {
-            this.total += this.operand1+this.operand2;
+            Calculator.nrOperatii++;
+            this.total += this.operand1 + this.operand2;
         }
 
         public void Minus()
         {
+            Calculator.nrOperatii++;
             this.total += this.operand1 - this.operand2;
         }
 
         public void Multiplicate()
         {
+            Calculator.nrOperatii++;
             this.total += this.operand1 * this.operand2;
         }
 
         public void Divide()
         {
+            Calculator.nrOperatii++;
             this.total += this.operand1 / this.operand2;
         }
 
@@ -71,6 +82,11 @@ namespace CalculatorCSharp
         {
             get { return this.op; }
             set { this.op = value; }
+        }
+
+        public int getOperationNo()
+        {
+            return Calculator.nrOperatii;
         }
 
     }
