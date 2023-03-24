@@ -86,21 +86,25 @@ namespace CalculatorCSharp
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
+            Calculator.nrOperatii++;
             calc.Op = operation.add;
         }
 
         private void btnMinus_Click(object sender, EventArgs e)
         {
+            Calculator.nrOperatii++;
             calc.Op = operation.minus;
         }
 
         private void btnMultiplication_Click(object sender, EventArgs e)
         {
+            Calculator.nrOperatii++;
             calc.Op = operation.multiplicate;
         }
 
         private void btnDivide_Click(object sender, EventArgs e)
         {
+            Calculator.nrOperatii++;
             calc.Op = operation.divide;
         }
 
@@ -127,6 +131,8 @@ namespace CalculatorCSharp
             lblResult.Text =Convert.ToString(calc.Total);
             lblFocus.Text = Convert.ToString(calc.Total);
             calc.Op = operation.none;
+            calc.Operand1 = 0;
+            calc.Operand2=0;
            
         }
 

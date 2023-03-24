@@ -51,25 +51,25 @@ namespace CalculatorCSharp
         public void Add()
         {
             Calculator.nrOperatii++;
-            this.total += this.operand1 + this.operand2;
+            this.total = this.operand1 + this.operand2;
         }
 
         public void Minus()
         {
             Calculator.nrOperatii++;
-            this.total += this.operand1 - this.operand2;
+            this.total = this.operand1 - this.operand2;
         }
 
         public void Multiplicate()
         {
             Calculator.nrOperatii++;
-            this.total += this.operand1 * this.operand2;
+            this.total = this.operand1 * this.operand2;
         }
 
         public void Divide()
         {
             Calculator.nrOperatii++;
-            this.total += this.operand1 / this.operand2;
+            this.total = this.operand1 / this.operand2;
         }
 
         public int Total
