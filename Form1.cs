@@ -88,24 +88,42 @@ namespace CalculatorCSharp
         {
             Calculator.nrOperatii++;
             calc.Op = operation.add;
+          
+            if (lblResult.Text != "0"&&lblResult.Text!="Start")
+            {
+                calc.Operand1 = Convert.ToInt32(lblResult.Text);
+            }
+            
         }
 
         private void btnMinus_Click(object sender, EventArgs e)
         {
             Calculator.nrOperatii++;
             calc.Op = operation.minus;
+            if (lblResult.Text != "0" && lblResult.Text != "Start")
+            {
+                calc.Operand1 = Convert.ToInt32(lblResult.Text);
+            }
         }
 
         private void btnMultiplication_Click(object sender, EventArgs e)
         {
             Calculator.nrOperatii++;
             calc.Op = operation.multiplicate;
+            if (lblResult.Text != "0" && lblResult.Text != "Start")
+            {
+                calc.Operand1 = Convert.ToInt32(lblResult.Text);
+            }
         }
 
         private void btnDivide_Click(object sender, EventArgs e)
         {
             Calculator.nrOperatii++;
             calc.Op = operation.divide;
+            if (lblResult.Text != "0" && lblResult.Text != "Start")
+            {
+                calc.Operand1 = Convert.ToInt32(lblResult.Text);
+            }
         }
 
         private void btnEqual_Click(object sender, EventArgs e)
